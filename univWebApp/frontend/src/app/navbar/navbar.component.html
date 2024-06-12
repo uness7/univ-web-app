@@ -1,0 +1,14 @@
+<mat-toolbar color="mat-deep-purple">
+  <button mat-button routerLink="/api/home" *ngIf="(this.authService.isLoggedIn() && this.getCurrentUserRole() !== 'admin')">Home</button>
+  <button mat-button routerLink="/api/admin/dashboard" *ngIf="(this.authService.isLoggedIn() && this.getCurrentUserRole() === 'admin')"><span class="material-symbols-outlined">
+    admin_panel_settings
+    </span> Dashboard</button>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/api/login" *ngIf="!this.authService.isLoggedIn();">Login</button>
+  <button mat-button routerLink="/api/Signup" *ngIf="!this.authService.isLoggedIn()">Sign up</button>
+  <button mat-button (click)="onLogout()" *ngIf="this.authService.isLoggedIn();"><span class="material-symbols-outlined">logout</span> logout</button>
+  <button mat-button routerLink="/api/account" *ngIf="this.authService.isLoggedIn();"><span class="material-symbols-outlined">
+    account_circle
+    </span></button>
+    <!-- <app-theme-toggle></app-theme-toggle> -->
+</mat-toolbar>

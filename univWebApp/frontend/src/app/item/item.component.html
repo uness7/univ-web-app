@@ -1,0 +1,39 @@
+<div class="item-list-container">
+  <div *ngFor="let item of paginatedItems" class="item-container">
+    <img src="https://via.placeholder.com/150" alt="Item Picture" class="item-picture">
+    <div class="item-details">
+      <h3 class="item-title">{{ item.title }}</h3>
+      <p class="item-description">{{ item.description }}</p>
+      <p class="item-status">
+        Status: <span [ngClass]="{'booked': item.status === 'booked', 'stored': item.status === 'stored', 'used': item.status === 'used'}">{{ item.status }}</span>
+      </p>
+      <p class="item-room">Room Number: {{ item.room }}</p>
+      <p class="item-room">Type: {{ item.type }}</p>
+      <!-- <p class="item-room">Used By: {{ item.status === 'used' ? item.requestedBy : 'N/A' }}</p> -->
+      <p class="item-room">Used By: {{ item.status === 'used' ? item.requestedBy.name + ' (' + item.requestedBy._id + ')' : 'N/A' }}</p>
+    </div>
+    <div class="button-container">
+      <button mat-raised-button
+              *ngIf="authService.getCurrentUser()?.role === 'user' && item.status === 'stored'"
+              [ngClass]="{'requested': isItemRequested(item._id), 'available-button': item.status === 'stored' && !isItemRequested(item._id)}"
+              (click)="requestItem(item)"
+              [disabled]="isItemRequested(item._id)">
+        {{ isItemRequested(item._id) ? 'Pending' : 'Request this item' }}
+      </button>
+      <button mat-raised-button class="return-button"
+              *ngIf="authService.getCurrentUser()?.role === 'user' && item.status === 'used' && item.requestedBy._id === currentUserId"
+              (click)="onReturn(item._id)">Return</button>
+      <button mat-button color="warn"
+              *ngIf="authService.isLoggedIn() && authService.getCurrentUser()?.role === 'admin'"
+              (click)="deleteOneItem(item)">Delete</button>
+      <p *ngIf="authService.getCurrentUser()?.role === 'user' && item.status === 'used' && currentUserId !== item.requestedBy"
+         class="unavailable-text">Unavailable</p>
+    </div>
+  </div>
+</div>
+
+<div class="pagination-controls">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+</div>

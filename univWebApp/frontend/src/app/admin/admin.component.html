@@ -1,0 +1,14 @@
+<mat-tab-group>
+    <mat-tab label="Users">
+      <app-admin-add-user (userAdded)="onUserAdded()" ></app-admin-add-user>
+      <app-admin-get-all-users [refresh]="userRefreshNeeded"></app-admin-get-all-users>
+    </mat-tab>
+    <mat-tab label="Items">
+      <app-admin-add-item (itemAdded)="onItemAdded()"></app-admin-add-item>
+      <app-item [refresh]="itemRefreshNeeded"></app-item>
+    </mat-tab>
+    <mat-tab label="Requests">
+      <app-admin-approve></app-admin-approve>
+    </mat-tab>
+  </mat-tab-group>
+  

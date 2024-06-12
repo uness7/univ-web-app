@@ -1,0 +1,24 @@
+<div class="approve-requests-container">
+  <div class="item-container" *ngIf="items.length === 0">
+    <p class="item-status">
+      Here you can see the requestes made by users and either approve or refuse them!
+    </p>
+  </div>
+  <div *ngFor="let item of items" class="item-container">
+    <img src="https://via.placeholder.com/150" alt="Item Picture" class="item-picture">
+    <div class="item-details">
+      <h3 class="item-title">{{ item.title }}</h3>
+      <p class="item-description">{{ item.description }}</p>
+      <p class="item-status">
+        Request Status: {{ item.requestStatus }}
+      </p>
+      <p class="item-requested-by">
+        Requested by :  Name: {{ item.requestedBy.name }} - Id {{ item.requestedBy._id }}
+      </p>
+      <div class="button-container">
+        <button mat-raised-button color="primary" (click)="approveRequest(item._id, 'approved')">Approve</button>
+        <button mat-raised-button color="warn" (click)="approveRequest(item._id, 'rejected')">Reject</button>
+      </div>
+    </div>
+  </div>
+</div>

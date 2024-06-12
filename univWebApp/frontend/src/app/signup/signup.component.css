@@ -1,0 +1,23 @@
+.signup-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+button {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 16px;
+}

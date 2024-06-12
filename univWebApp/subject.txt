@@ -1,0 +1,18 @@
+2. Sujet du projet
+
+
+L’objectif est de développer un site Web permettant au personnel de l'université de gérer le
+matériel : meubles, téléphones fixes, imprimantes, etc. Le matériel peut être stocké ou utilisé. S'il
+est stocké, il faut savoir dans quelle salle. S'il est utilisé, il faut aussi savoir dans quelle salle, et à
+qui le matériel a été confié. Le matériel peut être confié soit à un organisme (par exemple le
+département informatique), soit à un membre du personnel. Les utilisateurs (organismes ou
+membres individuels) doivent pouvoir consulter la liste des matériels disponibles, par type. Ils
+doivent pouvoir demander à se faire attribuer du matériel.
+Le site doit au minimum offrir les fonctionnalités suivantes :
+- l’administrateur peut ajouter/supprimer un compte utilisateur (organisme ou membre
+individuel). L’administrateur et les utilisateurs peuvent modifier leur compte (mot de passe, etc).
+- un utilisateur peut (1) consulter les matériels disponibles, par type, (2) consulter les
+matériels qui lui ont été attribués, (3) demander à se faire attribuer un matériel, (4) demander à
+rendre un matériel.
+- l'administrateur peut accepter une demande d'attribution, ou le retour d'un matériel. Il peut
+aussi ajouter un matériel dans la base, ou en retirer un.

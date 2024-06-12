@@ -1,0 +1,37 @@
+<div class="add-item-container">
+  <h2>Add New Item</h2>
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Title" name="title" [(ngModel)]="title" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput placeholder="Description" name="description" [(ngModel)]="description" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <mat-select name="type" [(ngModel)]="type" required>
+        <mat-option *ngFor="let option of types" [value]="option">{{ option }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Room</mat-label>
+      <mat-select name="room" [(ngModel)]="room" required>
+        <mat-option *ngFor="let option of roomValues" [value]="option">{{ option }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <mat-select name="status" [(ngModel)]="status" required>
+        <mat-option *ngFor="let option of statusValues" [value]="option">{{ option }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Add Item</button>
+  </form>
+</div>

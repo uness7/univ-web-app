@@ -1,0 +1,14 @@
+<div class="user-list-container">
+	<div *ngFor="let user of allUsers" class="user-card">
+	  <div class="user-details">
+		<h3 class="user-name">{{ user.name }}</h3>
+		<p class="user-email">email : {{ user.email }}</p>
+		<p class="user-role">role : {{ user.role }}</p>
+		<p class="user-role"> id : {{ user._id }}</p>
+	  </div>
+	  <div class="user-actions">
+		<button mat-button color="warn" (click)="deleteUser(user)">Delete</button>
+	  </div>
+	</div>
+  </div>
+  

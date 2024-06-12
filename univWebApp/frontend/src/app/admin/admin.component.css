@@ -1,0 +1,51 @@
+.user-list-container, .item-list-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .user-card, .item-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .user-card:hover, .item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .user-details, .item-details {
+    flex: 1;
+  }
+  
+  .user-name, .item-title {
+    font-size: 1.2em;
+    margin: 0;
+    color: #333;
+  }
+  
+  .user-email, .item-description {
+    font-size: 0.9em;
+    color: #777;
+    margin: 4px 0;
+  }
+  
+  .user-role, .item-status {
+    font-size: 0.9em;
+    color: #999;
+  }
+  
+  .user-actions, .item-actions {
+    display: flex;
+    gap: 8px;
+  }
+  

@@ -1,0 +1,25 @@
+.add-item-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-item-container form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.mat-form-field {
+  flex: 1 1 200px; /* Flex-grow, flex-shrink, flex-basis */
+}
+
+button {
+  align-self: center;
+  flex: 0 0 auto; /* Flex-grow, flex-shrink, flex-basis */
+  margin-left: 16px;
+}
+
