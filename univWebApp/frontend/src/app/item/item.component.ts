@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
-import { SimpleChanges, Input } from '@angular/core';
 import { Observable, map, of, pipe, catchError } from 'rxjs';
 
 @Component({
@@ -10,9 +9,9 @@ import { Observable, map, of, pipe, catchError } from 'rxjs';
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.css']
 })
-export class ItemComponent implements OnInit {
-  
-  items: any[] = [];  
+export class ItemComponent implements OnInit, OnChanges {
+
+  items: any[] = [];
   @Input() refresh!: boolean;
   paginatedItems: any[] = [];
   currentPage: number = 1;
@@ -20,11 +19,12 @@ export class ItemComponent implements OnInit {
   totalPages!: number;
   requestedBy!: string;
   @Input() currentUserId!: any;
+  searchTerm: string = ''; // Add search term property
 
   constructor(public authService: AuthService, private adminService: AdminService, private router: Router) { }
 
   ngOnInit(): void {
-    this.getItems();    
+    this.getItems();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -47,9 +47,11 @@ export class ItemComponent implements OnInit {
   }
 
   updatePaginatedItems(): void {
+    const filteredItems = this.items.filter(item => item.type.toLowerCase().includes(this.searchTerm.toLowerCase())); // Filter items by search term
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    this.paginatedItems = this.items.slice(startIndex, endIndex);
+    this.paginatedItems = filteredItems.slice(startIndex, endIndex);
+    this.totalPages = Math.ceil(filteredItems.length / this.itemsPerPage); // Update total pages based on filtered items
   }
 
   nextPage(): void {
@@ -133,4 +135,11 @@ export class ItemComponent implements OnInit {
       }
     );
   }
+  
+  // Method to handle search
+  onSearchTermChange(): void {
+    this.currentPage = 1; // Reset to first page
+    this.updatePaginatedItems();
+  }
 }
+ 

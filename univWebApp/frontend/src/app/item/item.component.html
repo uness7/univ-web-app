@@ -1,3 +1,7 @@
+<div class="search-bar">
+  <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="onSearchTermChange()" placeholder="Search by type">
+</div>
+
 <div class="item-list-container">
   <div *ngFor="let item of paginatedItems" class="item-container">
     <img src="https://via.placeholder.com/150" alt="Item Picture" class="item-picture">
@@ -37,3 +41,4 @@
   <span>Page {{ currentPage }} of {{ totalPages }}</span>
   <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
 </div>
+
