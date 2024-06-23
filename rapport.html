@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Rapport : Application web avec la stack (MongoDB, Express, Angular, NodeJS)</title>
+	<meta name="generator" content="LibreOffice 7.3.7.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2024-06-23T14:50:11.517782173"/>
+	<meta name="" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<style type="text/css">
+		h1 { color: #343a40; line-height: 160%; margin-left: 0.21in; margin-right: 0.21in }
+		h1.cjk { font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", sans-serif }
+		h1.ctl { font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", sans-serif }
+		p { color: #555555; font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", sans-serif; line-height: 160%; margin-left: 0.21in; margin-right: 0.21in; margin-bottom: 0.1in }
+		h2 { color: #343a40; line-height: 160%; margin-left: 0.21in; margin-right: 0.21in; margin-bottom: 0.16in; border-top: none; border-bottom: 1.50pt solid #007bff; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.05in; padding-left: 0in; padding-right: 0in }
+		h2.ctl { font-family: "FreeSans" }
+		h3 { color: #007bff; line-height: 160%; margin-left: 0.21in; margin-right: 0.21in; margin-top: 0.16in }
+		h3.western { font-size: 15pt }
+		h3.cjk { font-size: 15pt }
+		h3.ctl { font-family: "FreeSans"; font-size: 15pt }
+		code { color: #333333; font-family: "Courier New", "Courier", monospace; font-size: 10pt; background: #f0f0f0 }
+	</style>
+</head>
+<body lang="en-US" text="#333333" bgcolor="#f8f9fa" dir="ltr" style="border: none; padding: 0in"><h1 class="western" style="margin-top: 0in; margin-bottom: 0.31in">
+<span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Application
+web avec la stack MEAN</span></span></h1>
+<h2 class="western" style="margin-top: 0in; margin-bottom: 0.31in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">I.
+Introduction</span></span></h2>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">1.1
+Présentation du Projet</span></span></h3>
+<p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Ce
+projet implique le développement d'une application web utilisant
+Angular pour le frontend, Node.js pour le backend et MongoDB Atlas
+comme base de données. L'application est destinée au personnel
+universitaire et vise à faciliter la gestion des matériaux de
+l'université. Elle permet à tout membre du personnel de demander du
+matériel via l'interface du projet, et l'administrateur peut ensuite
+accepter ou refuser cette demande. Après l'acquisition, le membre du
+personnel peut retourner l'objet demandé après utilisation. </span></span>
+</p>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">1.2
+Objectifs</span></span></h3>
+<ul>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Développer
+	une interface utilisateur conviviale en utilisant Angular. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Implémenter
+	un backend sécurisé en utilisant Node.js. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Intégrer
+	MongoDB Atlas pour la gestion des bases de données. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Assurer
+	un contrôle d'accès basé sur les rôles pour les utilisateurs et
+	les administrateurs. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Fournir
+	des mises à jour en temps réel et des notifications pour les
+	changements de statut des objets. </span></span>
+	</p>
+</ul>
+<h2 class="western" style="margin-top: 0in; margin-bottom: 0.31in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">II.
+Installation</span></span></h2>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">1.
+Prérequis</span></span></h3>
+<ul>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Node.js
+	et npm (Node Package Manager) </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">MongoDB
+	(la base de données) </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Angular
+	CLI </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Compte
+	MongoDB Atlas </span></span>
+	</p>
+</ul>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">2.
+Installation des Prérequis</span></span></h3>
+<ul>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Téléchargez
+	et installez Node.js depuis nodejs.org. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Téléchargez
+	et installez MongoDB depuis mongodb.com. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Installez
+	Angular CLI globalement en utilisant npm : </span><span style="background: #ffffff"><code>npm
+	install -g @angular/cli</span></code><span style="background: #ffffff">
+	</span></span>
+	</p>
+</ul>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">3.
+Installation des modules</span></span></h3>
+<p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Partie
+backend :</span></span></p>
+<ol>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Ouvrez
+	une fenêtre terminal. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff"><code>cd
+	backend</span></code><span style="background: #ffffff"> </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff"><code>npm
+	install</span></code><span style="background: #ffffff"> </span></span>
+	</p>
+</ol>
+<p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Partie
+frontend :</span></span></p>
+<ol>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Ouvrez
+	une fenêtre terminal. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff"><code>cd
+	</span></code><span style="background: #ffffff"><code>frontend</span></code><span style="background: #ffffff">
+	</span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff"><code>npm
+	install</span></code><span style="background: #ffffff"> </span></span>
+	</p>
+</ol>
+<p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Exécution
+du Projet :</span></span></p>
+<ol>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff"><code>cd
+	backend</span></code><span style="background: #ffffff"> </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff"><code>npm
+	run dev</span></code><span style="background: #ffffff"> </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff"><code>cd
+	frontend</span></code><span style="background: #ffffff"> </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff"><code>ng
+	serve</span></code><span style="background: #ffffff"> </span></span>
+	</p>
+</ol>
+<p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Connexion
+à MongoDB Atlas :</span></span></p>
+<p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff"><code>mongosh
+&quot;mongodb+srv://app.g22pwha.mongodb.net/&quot; --apiVersion 1
+--username jd225025 --password 5ZIcHg1FwrMbkNNR</span></code><span style="background: #ffffff">
+</span></span>
+</p>
+<h2 class="western" style="margin-top: 0in; margin-bottom: 0.31in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">III.
+Conception du système</span></span></h2>
+<p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">L'application
+est basée sur une architecture à trois couches : </span></span>
+</p>
+<ul>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Frontend
+	: Angular, HTML et CSS. Responsable de l'interface utilisateur et de
+	l'interaction avec l'utilisateur. Envoie des requêtes HTTP au
+	backend pour récupérer ou envoyer des données et affiche les
+	résultats de manière dynamique. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Backend
+	: NodeJs, Express. Gère la logique de l'application, traite les
+	requêtes HTTP provenant du frontend, interagit avec la base de
+	données et retourne les réponses appropriées au frontend. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Base
+	de Données : MongoDB et Mongoose. Stocke toutes les données
+	nécessaires, telles que les informations sur les utilisateurs, les
+	objets matériels et les demandes. MongoDB Atlas, une base de
+	données NoSQL, est utilisée pour sa flexibilité et sa
+	scalabilité. </span></span>
+	</p>
+</ul>
+<h2 class="western" style="margin-top: 0in; margin-bottom: 0.31in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">IV.
+Conception de la Base de Données et Outils Utilisés</span></span></h2>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Package
+Mongoose :</span></span></h3>
+<ul>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">La
+	base de données stocke toutes les données nécessaires, telles que
+	les informations sur les utilisateurs, les objets matériels et les
+	demandes. MongoDB Atlas, une base de données NoSQL, est utilisée
+	pour sa flexibilité et sa scalabilité. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Mongoose
+	agit comme une couche d'abstraction sur MongoDB, facilitant la
+	définition des schémas de données, des validations et des
+	requêtes. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Mongoose
+	permet de définir des schémas de données pour chaque collection
+	MongoDB, assurant la cohérence des données et simplifiant le
+	développement. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Mongoose
+	offre des fonctionnalités intégrées de validation pour garantir
+	l'intégrité des données avant leur enregistrement. </span></span>
+	</p>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Support
+	de middleware pour gérer le cycle de vie des données (avant ou
+	après les opérations de sauvegarde, mise à jour, suppression). </span></span>
+	</p>
+</ul>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Flux
+de Données :</span></span></h3>
+<ol>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Demande
+	de Matériel : </span></span>
+	</p>
+	<ul>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Un
+		utilisateur fait une demande de matériel via l'interface
+		utilisateur. </span></span>
+		</p>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Une
+		requête POST est envoyée au backend avec les détails de la
+		demande. </span></span>
+		</p>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Le
+		backend met à jour la base de données pour marquer l'objet comme
+		&quot;demandé&quot; et associe la demande à l'utilisateur. </span></span>
+		</p>
+	</ul>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Acceptation/Rejet
+	par l'Administrateur : </span></span>
+	</p>
+	<ul>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">L'administrateur
+		voit toutes les demandes en attente sur son tableau de bord. </span></span>
+		</p>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">L'administrateur
+		peut accepter ou rejeter les demandes. </span></span>
+		</p>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Une
+		requête PUT est envoyée au backend pour mettre à jour le statut
+		de la demande dans la base de données. </span></span>
+		</p>
+	</ul>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Retour
+	de Matériel : </span></span>
+	</p>
+	<ul>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Après
+		utilisation, l'utilisateur peut retourner le matériel via
+		l'interface utilisateur. </span></span>
+		</p>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Une
+		requête PUT est envoyée au backend pour marquer l'objet comme
+		&quot;disponible&quot; à nouveau dans la base de données. </span></span>
+		</p>
+	</ul>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Création
+	d'Utilisateurs : </span></span>
+	</p>
+	<ul>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Lorsqu'un
+		utilisateur s'inscrit via l'interface, ses informations sont
+		envoyées au backend. </span></span>
+		</p>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Le
+		backend utilise Mongoose pour créer un nouvel utilisateur dans la
+		collection des utilisateurs de MongoDB Atlas. </span></span>
+		</p>
+	</ul>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Page
+	de Connexion et Authentification : </span></span>
+	</p>
+	<ul>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Sur
+		la page de connexion, les informations d'identification de
+		l'utilisateur sont vérifiées par le backend. </span></span>
+		</p>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Le
+		backend utilise bcrypt pour le hachage sécurisé des mots de passe
+		avant de les comparer avec ceux stockés en base de données. </span></span>
+		</p>
+	</ul>
+	<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Utilisation
+	de JWT (JSON Web Tokens) : </span></span>
+	</p>
+	<ul>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Après
+		la connexion réussie, le backend génère un JWT qui est renvoyé
+		au frontend. </span></span>
+		</p>
+		<li><p style="margin-bottom: 0.16in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Ce
+		JWT est inclus dans les en-têtes des requêtes ultérieures du
+		frontend au backend pour vérifier l'authenticité de l'utilisateur
+		et contrôler l'accès aux ressources sécurisées. </span></span>
+		</p>
+	</ul>
+</ol>
+<h2 class="western" style="margin-top: 0in; margin-bottom: 0.31in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">V.
+Conclusion</span></span></h2>
+<p style="margin-bottom: 0.31in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Ce
+rapport détaille le développement et l'implémentation d'une
+application web utilisant la stack MongoDB, Express, Angular et
+Node.js. L'utilisation de ces technologies offre une gestion efficace
+des matériaux universitaires tout en garantissant sécurité et
+flexibilité. </span></span>
+</p>
+<p style="margin-bottom: 0.31in"><span style="display: inline-block; border: none; padding: 0in"><span style="background: #ffffff">Pour
+toute question ou démonstration, n'hésitez pas à me contacter.</span></span></p>
+</body>
+</html>
